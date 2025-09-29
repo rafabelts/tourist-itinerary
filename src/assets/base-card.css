@@ -1,0 +1,14 @@
+.base-card {
+  background: #2e2e2e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  color: #f0f0f0;
+}
+
+.base-card:hover {
+  background: #ff5722;
+  cursor: pointer;
+}
