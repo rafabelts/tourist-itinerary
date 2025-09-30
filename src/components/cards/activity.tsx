@@ -1,10 +1,10 @@
-import type { Activity } from "../../types/activity";
+import type { Activity } from "../../types";
 import { BaseCard } from "../base-card";
 
 export function ActivityCard({ activities }: { activities: Array<Activity> }) {
   const renderActivities = () => {
-    if (!activities) {
-      return <div>Error fetching hotels</div>;
+    if (!activities || activities.length === 0) {
+      return <div>Error fetching activities</div>;
     }
 
     return activities.map((activity, index) => (

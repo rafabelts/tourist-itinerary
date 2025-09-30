@@ -7,7 +7,7 @@ export type Activity = {
   minimumDuration: string;
 };
 
-interface Price {
+type Price = {
   amount: string;
   currencyCode: string;
-}
+};

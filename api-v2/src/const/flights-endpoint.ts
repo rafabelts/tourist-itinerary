@@ -2,17 +2,15 @@ const FLIGHTS_BASE_URL =
   "https://test.api.amadeus.com/v2/shopping/flight-offers";
 
 type FlightRequestParams = {
-  origin: string;
-  destination: string;
-  departureDate: Date;
-  adults: number;
+  ciyCode: string;
+  departureDate: string;
+  returnDate: string;
 };
 
 export const getFlightsEndpoint = ({
-  origin,
-  destination,
+  ciyCode,
   departureDate,
-  adults,
+  returnDate,
 }: FlightRequestParams) => {
-  return `${FLIGHTS_BASE_URL}?originLocationCode=${origin}&destinationLocationCode=${destination}&departureDate=${departureDate}&adults=${adults}&nonStop=false&max=2`;
+  return `${FLIGHTS_BASE_URL}?originLocationCode=MEX&destinationLocationCode=${ciyCode}&departureDate=${departureDate}&returnDate=${returnDate}&adults=1&nonStop=false&max=6`;
 };

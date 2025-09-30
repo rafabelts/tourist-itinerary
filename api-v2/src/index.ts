@@ -14,9 +14,15 @@ app.use(
 app.use("*", amadeusMiddleware);
 
 app.get("/", async (c) => {
-  return c.text("Hola mundo!");
+  return c.text("Hola mundo, como estan!");
 });
 
 app.route("/tourism", tourismRouter);
+
+Bun.serve({
+  fetch: app.fetch,
+  port: 3000,
+  idleTimeout: 255,
+});
 
 export default app;

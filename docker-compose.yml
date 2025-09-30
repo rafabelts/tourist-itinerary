@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  app-frontend:
+    build:
+      context: .
+      dockerfile: DockerFile.frontend
+
+    working_dir: /app/frontend
+    volumes:
+      - ./:/app/frontend
+      - /app/frontend/node_modules
+    ports:
+      - "5173:5173"
+    command: ["pnpm", "dev"]
+
+  app-backend:
+    build:
+      context: .
+      dockerfile: DockerFile.backend
+    working_dir: /app/backend
+    volumes:
+      - ./api-v2/:/app/backend
+      - /app/backend/node_modules
+    ports:
+      - "3000:3000"
+    command: ["pnpm", "dev"]

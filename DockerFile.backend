@@ -1,0 +1,20 @@
+FROM node:latest as builder
+
+# install bun
+RUN curl -fsSL https://bun.sh/install | bash && \
+    mv /root/.bun/bin/bun /usr/local/bin/bun
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# create work directory
+WORKDIR /app/backend
+
+COPY api-v2/package*.json ./ 
+RUN pnpm install
+
+# copy backend source code
+COPY api-v2/ .
+
+EXPOSE 3000
+
+CMD ["pnpm", "dev"]

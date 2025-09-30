@@ -3,7 +3,7 @@ import type { Hotel } from "../../types";
 
 export function HotelCard({ hotels }: { hotels: Array<Hotel> }) {
   const renderHotels = () => {
-    if (!hotels) {
+    if (!hotels || hotels.length === 0) {
       return <div>Error fetching hotels</div>;
     }
     return hotels.map((hotel, index) => (

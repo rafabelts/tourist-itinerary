@@ -1,0 +1,21 @@
+# Frontend setup
+FROM node:latest as builder
+
+# Enable pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# create container work directory
+WORKDIR /app/frontend
+
+# copy dependencies and installed them
+COPY package*.json ./ 
+RUN pnpm install
+
+# copy source code
+COPY . .
+
+# expose vite port
+EXPOSE 5173
+
+# start dev server
+CMD ["pnpm", "dev"]
