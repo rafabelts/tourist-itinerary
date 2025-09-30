@@ -19,6 +19,7 @@ export function ActivityCard({ activities }: { activities: Array<Activity> }) {
         >
           {activity.name}
         </h2>
+        <img src={activity.pictures} width="320" height="280" />
         <p style={{ color: "rgb(250, 204, 21)" }}></p>
         <p>
           Lo terminaras en aproximadamente en {activity.minimumDuration} con un

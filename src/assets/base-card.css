@@ -8,7 +8,7 @@
   color: #f0f0f0;
 }
 
-.base-card:hover {
+.base-card.hoverable:hover {
   background: #ff5722;
   cursor: pointer;
 }

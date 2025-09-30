@@ -11,7 +11,7 @@ export function PlaceCard({
 }: PlaceType) {
   return (
     <Link to={path}>
-      <BaseCard>
+      <BaseCard hoverEnabled={true}>
         <img src={imageUrl} alt={imageAlt} width="250" height="200" />
         <h1>{city}</h1>
         <p>País: {country}</p>
