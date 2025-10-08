@@ -3,10 +3,7 @@ export const activitiesMock = {
     {
       type: "WATER_SPORT",
       name: "Snorkeling en el Arrecife Mesoamericano",
-      price: {
-        amount: "89.00",
-        currencyCode: "USD",
-      },
+      price: { amount: "89.00", currencyCode: "USD" },
       pictures: "https://images.unsplash.com/photo-1559827260-dc66d52bef19",
       bookingLink: "https://example.com/book/cun-snorkeling",
       minimumDuration: "4H",
@@ -21,28 +18,6 @@ export const activitiesMock = {
       pictures: "https://images.unsplash.com/photo-1518638150340-f706e86654de",
       bookingLink: "https://example.com/book/cun-chichen-itza",
       minimumDuration: "10H",
-    },
-    {
-      type: "WATER_SPORT",
-      name: "Buceo en Cozumel",
-      price: {
-        amount: "150.00",
-        currencyCode: "USD",
-      },
-      pictures: "https://images.unsplash.com/photo-1544551763-46a013bb70d5",
-      bookingLink: "https://example.com/book/cun-diving-cozumel",
-      minimumDuration: "6H",
-    },
-    {
-      ype: "NATURE",
-      name: "Cenote Dos Ojos",
-      price: {
-        amount: "75.00",
-        currencyCode: "USD",
-      },
-      pictures: "https://images.unsplash.com/photo-1625073004502-d9c0cf4e1c2d",
-      bookingLink: "https://example.com/book/cun-cenote",
-      minimumDuration: "5H",
     },
     {
       type: "ARCHAEOLOGICAL",
@@ -66,7 +41,11 @@ export const activitiesMock = {
       bookingLink: "https://example.com/book/cun-xcaret",
       minimumDuration: "8H",
     },
-    {
+
+    /*
+    
+   
+        {
       type: "WATER_SPORT",
       name: "Nado con Tortugas Marinas",
       price: {
@@ -110,6 +89,7 @@ export const activitiesMock = {
       bookingLink: "https://example.com/book/cun-sian-kaan",
       minimumDuration: "9H",
     },
+    */
   ],
   PAR: [
     {

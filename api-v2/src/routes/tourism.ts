@@ -1,8 +1,8 @@
 import { Hono } from "hono";
 import { Variables } from "../types";
-import { getHotels } from "../daos/get-hotels";
-import { getActivities } from "../daos/get-activities";
-import { getFlights } from "../daos/get-flights";
+import { AmadeusFactory } from "../factories/AmadeusFactory";
+import { MockFactory } from "../factories/MockFactory";
+
 const tourismRouter = new Hono<{ Variables: Variables }>();
 
 tourismRouter.get("/", async (c) => {
@@ -15,19 +15,27 @@ tourismRouter.get("/", async (c) => {
 
   const authToken = c.get("amadeusToken");
 
-  const hotels = await getHotels(authToken, cityCode);
-  const activities = await getActivities(authToken, cityCode);
-  const flights = await getFlights(
+  const amadeusFactory = new AmadeusFactory(
     authToken,
     cityCode,
     departureDate,
     returnDate,
   );
 
+  const mockFactory = new MockFactory(cityCode as "CUN" | "PAR" | "TYO");
+
+  const hotels = await amadeusFactory.getHotels();
+  const activities = await amadeusFactory.getActivities();
+  const flights = await amadeusFactory.getFlights();
+
+  const mockHotels = await mockFactory.getHotels();
+  const mockActivities = await mockFactory.getActivities();
+  const mockFlights = await mockFactory.getFlights();
+
   return c.json({
-    hotels,
-    activities,
-    flights,
+    hotels: hotels.map((hotel) => hotel.getData()),
+    activities: activities.map((activity) => activity.getData()),
+    flights: flights.map((flight) => flight.getData()),
   });
 });
 

@@ -2,32 +2,34 @@ export const flightsMock = {
   CUN: [
     {
       id: "MEX-CUN-001",
-      price: { total: "2145.50", currency: "MXN" },
-      itineraries: [
-        {
+      price: {
+        total: "2145.50",
+        currency: "MXN",
+      },
+      itineraries: {
+        duration: "PT2H15M",
+        segments: {
+          from: "MEX",
+          to: "CUN",
+
+          departure: {
+            iataCode: "MEX",
+            terminal: "2",
+            at: "2025-11-20T06:30:00",
+          },
+          arrival: {
+            iataCode: "CUN",
+            terminal: "4",
+            at: "2025-11-20T08:45:00",
+          },
+          airline: "AM",
+          flightNumber: "580",
           duration: "PT2H15M",
-          segments: [
-            {
-              from: "MEX",
-              to: "CUN",
-              departure: {
-                iataCode: "MEX",
-                terminal: "2",
-                at: "2025-11-20T06:30:00",
-              },
-              arrival: {
-                iataCode: "CUN",
-                terminal: "4",
-                at: "2025-11-20T08:45:00",
-              },
-              airline: "AM",
-              flightNumber: "580",
-              duration: "PT2H15M",
-            },
-          ],
         },
-      ],
+      },
     },
+
+    /*
     {
       id: "MEX-CUN-002",
       price: { total: "1980.00", currency: "MXN" },
@@ -280,6 +282,7 @@ export const flightsMock = {
         },
       ],
     },
+  */
   ],
   PAR: [
     {
